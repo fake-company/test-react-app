@@ -2,7 +2,7 @@
   "name": "test-react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://josephfus.co/test-react-app",
+  "homepage": "https://josephfusco.github.io/test-react-app",
   "dependencies": {
     "@masonite/external-ui-react": "^1.4.0",
     "gh-pages": "^2.0.1",
