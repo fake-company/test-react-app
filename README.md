@@ -1,1 +1,1 @@
-# [Test React App](https://josephfus.co/test-react-app/)
+# [Test React App](https://fake-company.github.io/test-react-app/)
