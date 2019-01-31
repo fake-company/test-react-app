@@ -1,0 +1,39 @@
+{
+  "name": "test-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://josephfus.co/test-react-app",
+  "dependencies": {
+    "@masonite/external-ui-react": "^1.4.0",
+    "gh-pages": "^2.0.1",
+    "node-sass": "^4.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.3"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "@masonite",
+    "rules": {
+      "react/prefer-stateless-function": 0,
+      "no-alert": 0,
+      "no-console": 0
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@masonite/eslint-config": "0.0.12"
+  }
+}
