@@ -3,38 +3,52 @@ import { Button } from '@masonite/external-ui-react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import styles from './App.module.scss'
 
+class DebugRouter extends Router {
+  constructor(props) {
+    super(props)
+    console.log('initial history is: ', JSON.stringify(this.history, null, 2))
+    this.history.listen((location, action) => {
+      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
+      console.log(`The last navigation action was ${action}`, JSON.stringify(this.history, null, 2))
+    })
+  }
+}
+
 function BasicExample() {
+  console.log(window.location)
   return (
-    <Router>
-      <div className={styles.App}>
-        <div className="AppHeader">
-          <img
-            className="AppLogo"
-            src="https://embed.widencdn.net/img/masonite/d58nubyyup/205px/Masonite_Logo_Stacked_1c_White.png"
-            alt="Masonite, open to extraordinary"
-          />
-          <ul>
-            <li>
-              <Link to="/">
-                <span className="AppLink">Home</span>
-              </Link>
-            </li>
-            <li className={styles.AppLink}>
-              <Link to="/about">About</Link>
-            </li>
-            <li className={styles.AppLink}>
-              <Link to="/topics">Topics</Link>
-            </li>
-          </ul>
+    <DebugRouter>
+      <Router>
+        <div className={styles.App}>
+          <div className="AppHeader">
+            <img
+              className="AppLogo"
+              src="https://embed.widencdn.net/img/masonite/d58nubyyup/205px/Masonite_Logo_Stacked_1c_White.png"
+              alt="Masonite, open to extraordinary"
+            />
+            <ul>
+              <li>
+                <Link to="/">
+                  <span className="AppLink">Home</span>
+                </Link>
+              </li>
+              <li className={styles.AppLink}>
+                <Link to="/about">About</Link>
+              </li>
+              <li className={styles.AppLink}>
+                <Link to="/topics">Topics</Link>
+              </li>
+            </ul>
 
-          <hr />
+            <hr />
 
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/topics" component={Topics} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/topics" component={Topics} />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </DebugRouter>
   )
 }
 
