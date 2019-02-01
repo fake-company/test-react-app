@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button } from '@masonite/external-ui-react'
 import styled from 'styled-components'
 import styles from './App.module.scss'
+import 'styles/animations.css'
 
 class App extends Component {
   constructor(props) {
