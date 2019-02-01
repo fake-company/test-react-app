@@ -3,8 +3,14 @@
 
   :global {
     .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-      height: 40vmin;
+      display: block;
+      width: 12rem;
+      height: auto;
+      max-width: 100%;
+      margin: 3rem auto;
+      :local {
+        animation: AppLogoSpin infinite 20s linear;
+      }
     }
 
     .App-header {
@@ -21,14 +27,14 @@
     .App-link {
       color: #61dafb;
     }
+  }
+}
 
-    @keyframes App-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
+@keyframes AppLogoSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
