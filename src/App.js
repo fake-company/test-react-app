@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Button } from '@masonite/external-ui-react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Router, Route, Link } from 'react-router-dom'
 import styles from './App.module.scss'
+import history from './history'
 
 class DebugRouter extends Router {
   constructor(props) {
@@ -17,38 +18,38 @@ class DebugRouter extends Router {
 function BasicExample() {
   console.log(window.location)
   return (
-    <DebugRouter>
-      <Router>
-        <div className={styles.App}>
-          <div className="AppHeader">
-            <img
-              className="AppLogo"
-              src="https://embed.widencdn.net/img/masonite/d58nubyyup/205px/Masonite_Logo_Stacked_1c_White.png"
-              alt="Masonite, open to extraordinary"
-            />
-            <ul>
-              <li>
-                <Link to="/">
-                  <span className="AppLink">Home</span>
-                </Link>
-              </li>
-              <li className={styles.AppLink}>
-                <Link to="/about">About</Link>
-              </li>
-              <li className={styles.AppLink}>
-                <Link to="/topics">Topics</Link>
-              </li>
-            </ul>
+    // <DebugRouter>
+    <Router history={history}>
+      <div className={styles.App}>
+        <div className="AppHeader">
+          <img
+            className="AppLogo"
+            src="https://embed.widencdn.net/img/masonite/d58nubyyup/205px/Masonite_Logo_Stacked_1c_White.png"
+            alt="Masonite, open to extraordinary"
+          />
+          <ul>
+            <li>
+              <Link to="/">
+                <span className="AppLink">Home</span>
+              </Link>
+            </li>
+            <li className={styles.AppLink}>
+              <Link to="/about">About</Link>
+            </li>
+            <li className={styles.AppLink}>
+              <Link to="/topics">Topics</Link>
+            </li>
+          </ul>
 
-            <hr />
+          <hr />
 
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/topics" component={Topics} />
-          </div>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/topics" component={Topics} />
         </div>
-      </Router>
-    </DebugRouter>
+      </div>
+    </Router>
+    // </DebugRouter>
   )
 }
 
