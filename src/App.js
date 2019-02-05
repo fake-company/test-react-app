@@ -4,21 +4,9 @@ import { Router, Route, Link } from 'react-router-dom'
 import styles from './App.module.scss'
 import history from './history'
 
-class DebugRouter extends Router {
-  constructor(props) {
-    super(props)
-    console.log('initial history is: ', JSON.stringify(this.history, null, 2))
-    this.history.listen((location, action) => {
-      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-      console.log(`The last navigation action was ${action}`, JSON.stringify(this.history, null, 2))
-    })
-  }
-}
-
 function BasicExample() {
   console.log(window.location)
   return (
-    // <DebugRouter>
     <Router history={history}>
       <div className={styles.App}>
         <div className="AppHeader">
@@ -49,7 +37,6 @@ function BasicExample() {
         </div>
       </div>
     </Router>
-    // </DebugRouter>
   )
 }
 
@@ -57,6 +44,11 @@ function Home() {
   return (
     <div>
       <h2>Home</h2>
+      <p>This is the home page.</p>
+      <img
+        src="https://embed.widencdn.net/img/masonite/ojau4qki5h/300x300px/BLC-106-129-528-1-bty.jpeg"
+        alt=""
+      />
     </div>
   )
 }
@@ -65,6 +57,7 @@ function About() {
   return (
     <div>
       <h2>About</h2>
+      <p>This is the about page.</p>
       <Button variant="light" onClick={() => alert('clicked')}>
         Click Me
       </Button>
@@ -76,6 +69,7 @@ function Topics({ match }) {
   return (
     <div>
       <h2>Topics</h2>
+      <p>This is the topics page.</p>
       <ul>
         <li>
           <Link to={`${match.url}/rendering`}>Rendering with React</Link>

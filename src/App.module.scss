@@ -21,7 +21,7 @@
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   line-height: 1.4;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
 
   :global {
@@ -40,6 +40,7 @@
     a {
       @extend %gradient-text;
       color: royalblue;
+      font-weight: 700;
     }
 
     hr {
