@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Button } from '@masonite/external-ui-react'
-import { Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import styles from './App.module.scss'
 import history from './history'
 
 function BasicExample() {
-  console.log(window.location)
   return (
-    <Router history={history}>
+    <Router basename="/test-react-app" history={history}>
       <div className={styles.App}>
         <div className="AppHeader">
           <img
