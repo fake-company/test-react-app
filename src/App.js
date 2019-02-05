@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button } from '@masonite/external-ui-react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import {
+  BrowserRouter as Router, Route, Link, Redirect,
+} from 'react-router-dom'
 import styles from './App.module.scss'
 import history from './history'
 
@@ -21,18 +23,18 @@ function BasicExample() {
               </Link>
             </li>
             <li className={styles.AppLink}>
-              <Link to="/about">About</Link>
+              <Link to="/about/">About</Link>
             </li>
             <li className={styles.AppLink}>
-              <Link to="/topics">Topics</Link>
+              <Link to="/topics/">Topics</Link>
             </li>
           </ul>
 
           <hr />
 
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/topics" component={Topics} />
+          <Route path="/about/" component={About} />
+          <Route path="/topics/" component={Topics} />
         </div>
       </div>
     </Router>
