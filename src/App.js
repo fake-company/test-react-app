@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from '@masonite/external-ui-react'
-import {
-  BrowserRouter as Router, Route, Link, Redirect,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import styles from './App.module.scss'
 import history from './history'
 
